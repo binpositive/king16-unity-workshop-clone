@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameOverTrigger : MonoBehaviour
 {
@@ -7,6 +7,7 @@ public class GameOverTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GameManager.Instance.OnGameOver();
+            SoundManager.Instance.PlaySfx("SFX/Common/stage-fail");
         }
     }
 

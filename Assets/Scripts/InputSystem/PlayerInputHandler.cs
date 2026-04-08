@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -23,15 +23,6 @@ public class PlayerInputHandler : MonoBehaviour
         if (value.isPressed)
         {
             _movement.Jump();
-        }
-    }
-
-    // Input Action의 "Attack" 액션과 대응
-    public void OnAttack(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            _movement.Attack();
         }
     }
 }

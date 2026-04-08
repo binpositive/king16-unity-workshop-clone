@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
@@ -55,6 +55,7 @@ public class GameManager : Singleton<GameManager>
             _stageList.RemoveAt(randomIndex);
 
             SceneManager.LoadScene("Stage_" + stageNum);
+            SoundManager.Instance.PlaySfx("SFX/Common/game-start");
         }
         else
         {
@@ -66,6 +67,7 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 0f;
         _gameOverCanvas.SetActive(true);
+        SoundManager.Instance.PlaySfx("SFX/Common/game-over");
     }
 
     public void RestartGame()
@@ -79,5 +81,6 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 0f;
         _gameClearCanvas.SetActive(true);
+        SoundManager.Instance.PlaySfx("SFX/Common/game-clear");
     }
 }
