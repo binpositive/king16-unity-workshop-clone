@@ -19,7 +19,7 @@ namespace Team8
         void Update()
         {
             float offset = Mathf.Sin(Time.time * speed) * moveDistance;
-            transform.position = startPos + new Vector3(offset, 0, 0);
+            transform.position = startPos + new Vector3(0, offset, 0);
         }
     }
 
