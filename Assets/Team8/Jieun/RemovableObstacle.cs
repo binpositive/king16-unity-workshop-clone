@@ -25,20 +25,20 @@ namespace Team8
             {
                 transform.position += Vector3.down * deathSpeed * Time.deltaTime;
 
-                if (transform.positioin.y < -10f)
+                if (transform.position.y < -10f)
                     Destroy(gameObject);
                 return;
             }
 
             float offset = Mathf.Sin(Time.time * speed) * moveDistance;
-            transform.position = startPos + new Vector3(0, offset, 0);
+            transform.position = startPos + new Vector3(offset, 0, 0);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("Player")) return;
 
-            bool stompedFromAbove = collision.transform.positioin.y > transform.position.y + 0.3f;
+            bool stompedFromAbove = collision.transform.position.y > transform.position.y + 0.3f;
 
             if (stompedFromAbove)
             {
